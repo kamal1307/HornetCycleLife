@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" spacing="5" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esi.atl5.balde_elbejjati_kayani.hornet.controller.WindowGameController">
+   <children>
+      <HBox>
+         <children>
+            <GridPane fx:id="grid" alignment="CENTER" gridLinesVisible="true" prefHeight="463.0" prefWidth="730.0" />
+              
+            <VBox alignment="TOP_CENTER" prefHeight="435.0" prefWidth="544.0">
+               <children>
+                  <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" prefHeight="52.0" prefWidth="171.0" text="SEASON :" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="22.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox id="choiceSeason" fx:id="choiceSeason" prefHeight="33.0" prefWidth="134.0" value="AUTUMN">
+                      <String fx:value="WINTER" />
+                      <String fx:value="SPRING" />
+                      <String fx:value="AUTUMN" />
+                      <String fx:value="SUMMER" />
+                      
+                  </ChoiceBox>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="155.0" text="FILL RATIO :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="ratio" prefHeight="36.0" prefWidth="148.0" value="MEDIUM">
+                      <String fx:value="LOW" />
+                      <String fx:value="MEDIUM" />
+                      <String fx:value="HIGH" />
+                  </ChoiceBox>
+                  <Label prefHeight="42.0" prefWidth="155.0" text="GENERATIONS : ">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="genLab" alignment="CENTER" prefHeight="41.0" prefWidth="146.0" text="0">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="128.0" text="HORNET A LIVE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="NbAlive" alignment="CENTER" prefHeight="40.0" prefWidth="96.0" text="0">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                    
+               </children>
+               <effect>
+                  <Lighting>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                     <bumpInput>
+                        <Blend />
+                     </bumpInput>
+                  </Lighting>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="136.0" prefWidth="691.0" spacing="50">
+         <children>
+            <Button id="bt" fx:id="play" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#nextGen" prefHeight="69.0" prefWidth="102.0">                
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="autoPlay" mnemonicParsing="false" onAction="#nextGenAuto" prefHeight="73.0" prefWidth="159.0" text="AUTOPLAY">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitGame" prefHeight="72.0" prefWidth="85.0">
+                <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>          
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
